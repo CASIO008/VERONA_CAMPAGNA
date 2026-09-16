@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#100E0B" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Checkout — Verona Campagna Gioielli</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem('vc_theme');
+        if (t === 'dark' || t === 'light') r.dataset.theme = t;
+        else r.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (localStorage.getItem('vc_intro_v1') === '1') r.classList.add('cached');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body data-page="checkout">
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div id="siteHeader"></div>
+
+  <main id="main">
+    <section class="ck">
+      <div class="wrap">
+        <ol class="ck-steps" id="ckSteps">
+          <li data-step="1" class="is-active">Sacola</li>
+          <li data-step="2">Identificação</li>
+          <li data-step="3">Entrega</li>
+          <li data-step="4">Pagamento</li>
+          <li data-step="5">Pronto</li>
+        </ol>
+
+        <div class="ck-grid">
+          <div class="ck-main">
+            <!-- ===== 1 · SACOLA ===== -->
+            <section class="ck-step is-active" data-panel="1">
+              <h1 class="ck-title">Sua sacola</h1>
+              <p class="ck-sub" id="ckBagSub">Confira as peças e as quantidades antes de continuar.</p>
+              <div class="ck-rows" id="ckItems"></div>
+            </section>
+
+            <!-- ===== 2 · IDENTIFICAÇÃO ===== -->
+            <section class="ck-step" data-panel="2">
+              <h1 class="ck-title">Quem recebe a joia?</h1>
+              <p class="ck-sub" id="ckIdSub">Preencha seus dados — usamos apenas para o pedido e a nota fiscal.</p>
+              <div class="ck-rows">
+                <div class="field">
+                  <label for="ckNome">Nome completo *</label>
+                  <input id="ckNome" name="nome" autocomplete="name" required>
+                </div>
+                <div class="ck-row2">
+                  <div class="field">
+                    <label for="ckEmail">E-mail *</label>
+                    <input id="ckEmail" name="email" type="email" autocomplete="email" required>
+                  </div>
+                  <div class="field">
+                    <label for="ckZap">WhatsApp *</label>
+                    <input id="ckZap" name="zap" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
+                  </div>
+                </div>
+                <div class="field" id="ckRazaoField" hidden>
+                  <label for="ckRazao">Razão social *</label>
+                  <input id="ckRazao" name="razao" autocomplete="organization">
+                </div>
+                <div class="ck-row2">
+                  <div class="field">
+                    <label for="ckDoc" id="ckDocLabel">CPF *</label>
+                    <input id="ckDoc" name="doc" inputmode="numeric" placeholder="000.000.000-00" required>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== 3 · ENTREGA ===== -->
+            <section class="ck-step" data-panel="3">
+              <h1 class="ck-title">Onde entregamos?</h1>
+              <p class="ck-sub">Digite o CEP para completarmos o endereço automaticamente.</p>
+              <div class="ck-rows">
+                <div class="ck-row2">
+                  <div class="field">
+                    <label for="ckCep">CEP *</label>
+                    <input id="ckCep" name="cep" inputmode="numeric" placeholder="00000-000" autocomplete="postal-code" required>
+                  </div>
+                  <div class="field">
+                    <label for="ckNumero">Número *</label>
+                    <input id="ckNumero" name="numero" inputmode="numeric" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ckRua">Endereço *</label>
+                  <input id="ckRua" name="rua" autocomplete="street-address" required>
+                </div>
+                <div class="ck-row3">
+                  <div class="field">
+                    <label for="ckBairro">Bairro *</label>
+                    <input id="ckBairro" name="bairro" required>
+                  </div>
+                  <div class="field">
+                    <label for="ckCidade">Cidade *</label>
+                    <input id="ckCidade" name="cidade" autocomplete="address-level2" required>
+                  </div>
+                  <div class="field">
+                    <label for="ckUf">UF *</label>
+                    <input id="ckUf" name="uf" maxlength="2" autocomplete="address-level1" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ckCompl">Complemento (opcional)</label>
+                  <input id="ckCompl" name="complemento" placeholder="Apto, bloco, referência…">
+                </div>
+
+                <div class="ck-choice" id="ckShip">
+                  <label class="ck-radio is-active">
+                    <input type="radio" name="ship" value="pac" checked>
+                    <span class="info"><strong>Entrega padrão</strong><em>3 a 7 dias úteis depois do envio</em></span>
+                    <span class="val" id="shipPac">R$ 19,90</span>
+                  </label>
+                  <label class="ck-radio">
+                    <input type="radio" name="ship" value="sedex">
+                    <span class="info"><strong>Entrega expressa</strong><em>1 a 3 dias úteis depois do envio</em></span>
+                    <span class="val" id="shipSedex">R$ 34,90</span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== 4 · PAGAMENTO ===== -->
+            <section class="ck-step" data-panel="4">
+              <h1 class="ck-title">Como prefere pagar?</h1>
+              <p class="ck-sub">Ambiente demonstrativo: nenhum dado de cartão é enviado ou armazenado.</p>
+
+              <div class="ck-choice" id="ckPay">
+                <label class="ck-radio is-active">
+                  <input type="radio" name="pay" value="pix" checked>
+                  <span class="info"><strong>Pix</strong><em>aprovação imediata · 5% de desconto</em></span>
+                  <span class="val" id="payPixVal">—</span>
+                </label>
+
+                <label class="ck-radio">
+                  <input type="radio" name="pay" value="card">
+                  <span class="info"><strong>Cartão de crédito</strong><em>até 12x sem juros</em>
+                    <span class="ck-pay-icons">
+                      <img src="images/pay/visa.svg" alt="Visa">
+                      <img src="images/pay/mastercard.svg" alt="Mastercard">
+                      <img src="images/pay/elo.svg" alt="Elo">
+                      <img src="images/pay/amex.svg" alt="Amex">
+                      <img src="images/pay/hipercard.svg" alt="Hipercard">
+                    </span>
+                  </span>
+                  <span class="val" id="payCardVal">—</span>
+                </label>
+
+                <label class="ck-radio">
+                  <input type="radio" name="pay" value="boleto">
+                  <span class="info"><strong>Boleto bancário</strong><em>vencimento em 2 dias úteis</em></span>
+                  <span class="val" id="payBoletoVal">—</span>
+                </label>
+              </div>
+
+              <div class="ck-pix" id="ckPix">
+                <span class="qr" aria-hidden="true">
+                  <svg viewBox="0 0 100 100" fill="none" stroke="var(--ink)" stroke-width="5">
+                    <rect x="8" y="8" width="26" height="26"/><rect x="66" y="8" width="26" height="26"/><rect x="8" y="66" width="26" height="26"/>
+                    <path d="M46 8h10v10H46zM62 30h14v8H62zM46 30h8v16h-8zM8 46h16v10H8zM34 46h10v10H34zM54 54h14v10H54zM76 46h16v16H76zM46 70h12v10H46zM66 70h10v22H66zM30 84h16v8H30zM84 70h8v14h-8z"/>
+                  </svg>
+                </span>
+                <p><strong>5% de desconto à vista</strong> O código Pix será gerado ao confirmar o pedido. Você também pode copiar o código e pagar no app do seu banco.</p>
+              </div>
+
+              <div class="ck-card-form" id="ckCard" hidden>
+                <div class="ck-visa-art">
+                  <div class="row1">
+                    <span class="chip" aria-hidden="true"></span>
+                    <span class="brandword">VERONA <em>CAMPAGNA</em></span>
+                  </div>
+                  <span class="num" id="ccNum">•••• •••• •••• ••••</span>
+                  <div class="bottom">
+                    <span id="ccHolder">NOME NO CARTÃO</span>
+                    <span id="ccExp">••/••</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ccNumber">Número do cartão *</label>
+                  <input id="ccNumber" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+                </div>
+                <div class="field">
+                  <label for="ccName">Nome impresso no cartão *</label>
+                  <input id="ccName" autocomplete="cc-name">
+                </div>
+                <div class="ck-row3">
+                  <div class="field">
+                    <label for="ccExp">Validade *</label>
+                    <input id="ccExp" inputmode="numeric" placeholder="MM/AA" autocomplete="cc-exp">
+                  </div>
+                  <div class="field">
+                    <label for="ccCvv">CVV *</label>
+                    <input id="ccCvv" inputmode="numeric" placeholder="000" autocomplete="cc-csc">
+                  </div>
+                  <div class="field">
+                    <label for="ccParcelas">Parcelas *</label>
+                    <select id="ccParcelas"></select>
+                  </div>
+                </div>
+                <p class="ck-sub" id="ccBrandNote" style="margin:0"></p>
+              </div>
+            </section>
+
+            <!-- ===== 5 · PRONTO ===== -->
+            <section class="ck-step" data-panel="5">
+              <div class="ck-done">
+                <div class="seal" aria-hidden="true">✦</div>
+                <h2>Pedido recebido!</h2>
+                <p id="ckDoneSub">Obrigado por confiar no nosso ateliê. Enviamos a confirmação por e-mail e WhatsApp.</p>
+                <div class="ck-order-box" id="ckOrderBox"></div>
+                <div class="btn-row">
+                  <a class="btn btn-dark" id="ckWhats" href="#" target="_blank" rel="noopener">Falar com o ateliê</a>
+                  <a class="btn btn-ghost" href="catalogo.html">Continuar comprando</a>
+                </div>
+              </div>
+            </section>
+
+            <div class="ck-nav" id="ckNav">
+              <button class="btn btn-ghost" type="button" id="ckBack">Voltar</button>
+              <button class="btn btn-dark" type="button" id="ckNext">Continuar <span class="arr">→</span></button>
+            </div>
+          </div>
+
+          <!-- ===== RESUMO ===== -->
+          <aside class="ck-summary" id="ckSummary" aria-label="Resumo do pedido"></aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteDrawers"></div>
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span></span></div>
+
+  <script src="data.js"></script>
+  <script src="theme.js"></script>
+  <script src="pay-core.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

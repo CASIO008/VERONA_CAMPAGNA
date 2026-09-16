@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#100E0B" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Verona Campagna — Gioielli · Joias em prata 925 e banho de ouro</title>
+  <meta name="description" content="Verona Campagna é joalheria autoral: anéis, brincos, colares, pingentes e pulseiras em prata 925 e banho de ouro 18k, feitos à mão em pequenos lotes. Varejo e atacado a partir de 10 peças.">
+  <!-- compartilhamento -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VERONA CAMPAGNA">
+  <meta property="og:title" content="Verona Campagna — Gioielli">
+  <meta property="og:description" content="Joias autorais em prata 925 e banho de ouro 18k. Frete grátis acima de R$ 299 · 5% off no Pix · atacado a partir de 10 peças.">
+  <meta property="og:image" content="images/editorial/modelo-4.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem('vc_theme');
+        if (t === 'dark' || t === 'light') r.dataset.theme = t;
+        else r.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (localStorage.getItem('vc_intro_v1') === '1') r.classList.add('cached');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div id="siteHeader"></div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Alta joalheria · prata 925 &amp; banho de ouro 18k</span>
+          <h1 class="hero-title" data-split>Joias para <em>durar</em> gerações</h1>
+          <p class="hero-sub">Peças esculpidas à mão em pequenos lotes — da coroa de espinhos ao brilho do colar Starlit. Cada joia nasce no nosso ateliê e chega pronta para acompanhar a sua história.</p>
+          <div class="hero-cta">
+            <a class="btn btn-dark" href="catalogo.html">Explorar joias <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="atacado.html">Comprar no atacado</a>
+          </div>
+          <p class="hero-note">Frete grátis acima de R$ 299 · 5% off no Pix · troca em até 7 dias</p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-frame">
+            <img src="images/editorial/modelo-4.jpg" alt="Modelo usando joias Verona Campagna" fetchpriority="high" decoding="async">
+          </div>
+          <div class="hero-badge">
+            <strong>Feito à mão <i>·</i> pequenos lotes</strong>
+            <span>Prata 925 maciça · banho de ouro 18k</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Verona Campagna</span><i>✦</i>
+          <span>Prata 925</span><i>✦</i>
+          <span>Banho de ouro 18k</span><i>✦</i>
+          <span>Feito à mão</span><i>✦</i>
+        </div>
+        <div class="marquee-group">
+          <span>Verona Campagna</span><i>✦</i>
+          <span>Prata 925</span><i>✦</i>
+          <span>Banho de ouro 18k</span><i>✦</i>
+          <span>Feito à mão</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CATEGORIAS ============ -->
+    <section class="section" id="categorias">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal>Navegue por</p>
+            <h2 data-reveal>As famílias da casa</h2>
+          </div>
+          <p class="section-sub" data-reveal>Cinco famílias, uma mesma assinatura: metal maciço, acabamento à mão e o brilho na medida.</p>
+        </div>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ COLEÇÃO ============ -->
+    <section class="section" id="colecao" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal id="collectionEyebrow">A coleção</p>
+            <h2 data-reveal>Essenciais Verona</h2>
+          </div>
+          <p class="section-sub" data-reveal>Cada peça sai do ateliê polida à mão, conferida uma a uma e embalada em estojo próprio para presente.</p>
+        </div>
+
+        <div class="collection-tools" data-reveal>
+          <div class="filters" id="filters" role="group" aria-label="Filtrar por categoria">
+            <button class="chip is-active" data-filter="all" type="button">Todas</button>
+            <button class="chip" data-filter="aneis" type="button">Anéis</button>
+            <button class="chip" data-filter="brincos" type="button">Brincos</button>
+            <button class="chip" data-filter="colares" type="button">Colares</button>
+            <button class="chip" data-filter="pingentes" type="button">Pingentes</button>
+            <button class="chip" data-filter="pulseiras" type="button">Pulseiras</button>
+          </div>
+          <div class="collection-right">
+            <span class="collection-count" id="collectionCount"></span>
+            <label class="sort-wrap">
+              <span class="sort-label">Ordenar</span>
+              <select class="sort-select" id="sortSelect" aria-label="Ordenar joias">
+                <option value="relevancia">Relevância</option>
+                <option value="novidades">Novidades</option>
+                <option value="menor">Menor preço</option>
+                <option value="maior">Maior preço</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ EDITORIAL DUO ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap duo">
+        <article class="duo-card" data-reveal>
+          <img src="images/editorial/modelo-3.jpg" alt="Pingente de cristal esmeralda em close" loading="lazy" decoding="async" data-parallax="6">
+          <div class="duo-veil" aria-hidden="true"></div>
+          <div class="duo-copy">
+            <h2>A gota que <strong>assina</strong></h2>
+            <p>O verde profundo do Pingente Esmeralda entra em cena — e muda o tom de tudo.</p>
+            <a class="btn btn-media" href="produto.html?id=pingente-esmeralda">Ver o pingente</a>
+          </div>
+        </article>
+        <article class="duo-card" data-reveal>
+          <img src="images/editorial/modelo-2.jpg" alt="Camadas de prata e anéis sobrepostos" loading="lazy" decoding="async" data-parallax="6">
+          <div class="duo-veil" aria-hidden="true"></div>
+          <div class="duo-copy">
+            <h2>Camadas de <strong>prata</strong></h2>
+            <p>Empilhe anéis, some um colar fino e deixe a prata contar o resto.</p>
+            <a class="btn btn-media" href="catalogo.html?cat=aneis">Ver anéis</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ ATACADO ============ -->
+    <section class="wholesale-band" id="atacado">
+      <div class="wrap wb-grid">
+        <div class="wb-copy" data-reveal>
+          <span class="eyebrow">Para revendedores</span>
+          <h2>O ateliê também veste a sua <em>vitrine</em>.</h2>
+          <p>Revenda Verona Campagna com condições progressivas: quanto maior o pedido, maior a margem. Peças conferidas, embaladas individualmente e prontas para expor.</p>
+          <div class="wb-cta">
+            <a class="btn btn-gold" href="atacado.html">Quero ser revendedor <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="catalogo.html">Ver catálogo</a>
+          </div>
+        </div>
+        <div class="wb-tiers" data-reveal>
+          <div class="wb-tier"><span><em>Atacado</em><br>10 a 24 peças</span><strong>25% off</strong></div>
+          <div class="wb-tier"><span><em>Atacado Pro</em><br>25 a 49 peças</span><strong>35% off</strong></div>
+          <div class="wb-tier"><span><em>Distribuidor</em><br>50+ peças</span><strong>45% off</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-media" data-reveal>
+          <img src="images/editorial/modelo-1.jpg" alt="Mãos com anéis e colares Verona Campagna" loading="lazy" decoding="async">
+          <div class="about-card">
+            <strong>925</strong>
+            <span>prata maciça em cada peça, conferida uma a uma</span>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow" data-reveal>O ateliê</p>
+          <h2 data-reveal>Nasceu em Verona. Cresceu no pulso de quem usa.</h2>
+          <p data-reveal>A Verona Campagna nasceu da vontade de fazer joias com o peso certo: prata maciça, banho de ouro espesso e acabamento manual que resiste ao tempo. Nada de peças descartáveis — cada anel, colar ou brinco é pensado para atravessar décadas e continuar com a mesma presença.</p>
+          <p data-reveal>Produzimos em pequenos lotes, conferimos peça por peça e embalamos em estojo próprio. Do ateliê à sua caixa, sem intermediários.</p>
+          <div class="about-cta">
+            <a class="btn btn-ghost" href="sobre.html">Conhecer a história <span class="arr">→</span></a>
+          </div>
+          <ul class="about-stats" data-reveal>
+            <li><strong>12k+</strong><span>clientes atendidos</span></li>
+            <li><strong>4.9</strong><span>nota média de avaliação</span></li>
+            <li><strong>7 dias</strong><span>para trocar sem perguntas</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow" data-reveal>Depoimentos</p>
+          <h2 data-reveal>Quem usa, indica</h2>
+        </div>
+        <div class="reviews-grid">
+          <figure class="review" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote>“Comprei o anel Coroa Rainha e não tiro do dedo. O peso da prata é outro nível — dá pra sentir a diferença na hora.”</blockquote>
+            <figcaption><strong>Marina L.</strong><span>Compra verificada · Belo Horizonte</span></figcaption>
+          </figure>
+          <figure class="review" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote>“Revendo as peças na minha loja em Campinas. A caixa, o acabamento e o pós-venda facilitam demais a venda.”</blockquote>
+            <figcaption><strong>Carla M.</strong><span>Revendedora · Atacado Pro</span></figcaption>
+          </figure>
+          <figure class="review" data-reveal>
+            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <blockquote>“O Pingente Esmeralda é ainda mais bonito pessoalmente. Chegou rápido e embalado como joia de verdade.”</blockquote>
+            <figcaption><strong>Renato A.</strong><span>Compra verificada · São Paulo</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="news-card" data-reveal>
+          <div>
+            <p class="eyebrow">Lista Verona</p>
+            <h2>Ganhe 10% na primeira compra.</h2>
+            <p>Lançamentos, peças em edição limitada e condições de atacado antes de todo mundo.</p>
+          </div>
+          <form class="news-form" id="newsForm" novalidate>
+            <input type="email" id="newsEmail" name="email" placeholder="seu@email.com" autocomplete="email" required aria-label="Seu e-mail">
+            <button class="btn btn-dark" type="submit">Quero meu cupom</button>
+          </form>
+          <p class="news-note" id="newsNote" style="grid-column:1/-1">Sem spam. Você sai da lista quando quiser.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteDrawers"></div>
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span></span></div>
+
+  <script src="data.js"></script>
+  <script src="theme.js"></script>
+  <script src="vendor/three.min.js"></script>
+  <script src="intro.js"></script>
+  <script src="script.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

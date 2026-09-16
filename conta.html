@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#100E0B" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Minha conta — Verona Campagna Gioielli</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem('vc_theme');
+        if (t === 'dark' || t === 'light') r.dataset.theme = t;
+        else r.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (localStorage.getItem('vc_intro_v1') === '1') r.classList.add('cached');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body data-page="conta">
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div id="siteHeader"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="crumbs"><a href="index.html">Início</a><span>Minha conta</span></p>
+        <p class="eyebrow">Ateliê do cliente</p>
+        <h1>Minha conta</h1>
+        <p class="page-sub">Seus dados, pedidos e endereço ficam salvos apenas neste navegador — sem senha e sem cadastro em servidor.</p>
+      </div>
+    </section>
+
+    <section class="ac">
+      <div class="wrap ac-grid">
+        <nav class="ac-nav" aria-label="Seções da conta">
+          <button type="button" class="is-active" data-ac="dados">Meus dados</button>
+          <button type="button" data-ac="pedidos">Meus pedidos</button>
+          <button type="button" data-ac="endereco">Endereço</button>
+          <button type="button" data-ac="privacidade">Privacidade</button>
+        </nav>
+
+        <div>
+          <!-- dados -->
+          <section class="ac-panel is-active" data-panel="dados">
+            <h2>Meus dados</h2>
+            <p class="ac-sub">Usamos estas informações para agilizar o seu próximo pedido.</p>
+            <form class="ac-card" id="pfForm">
+              <div class="ck-rows">
+                <div class="field"><label for="pfNome">Nome completo</label><input id="pfNome"></div>
+                <div class="ck-row2">
+                  <div class="field"><label for="pfEmail">E-mail</label><input id="pfEmail" type="email"></div>
+                  <div class="field"><label for="pfZap">WhatsApp</label><input id="pfZap" inputmode="tel" placeholder="(00) 00000-0000"></div>
+                </div>
+                <div class="field"><label for="pfDoc">CPF</label><input id="pfDoc" inputmode="numeric" placeholder="000.000.000-00"></div>
+              </div>
+              <button class="btn btn-dark" type="submit" style="margin-top:22px">Salvar dados</button>
+            </form>
+          </section>
+
+          <!-- pedidos -->
+          <section class="ac-panel" data-panel="pedidos">
+            <h2>Meus pedidos</h2>
+            <p class="ac-sub">Histórico dos pedidos feitos neste navegador.</p>
+            <div id="odList"></div>
+          </section>
+
+          <!-- endereço -->
+          <section class="ac-panel" data-panel="endereco">
+            <h2>Endereço de entrega</h2>
+            <p class="ac-sub">Preenchemos o checkout automaticamente com estes dados.</p>
+            <div id="adWrap"></div>
+          </section>
+
+          <!-- privacidade -->
+          <section class="ac-panel" data-panel="privacidade">
+            <h2>Privacidade</h2>
+            <p class="ac-sub">Transparência total: seus dados ficam só no seu navegador.</p>
+            <div class="ac-card">
+              <h3>O que guardamos aqui</h3>
+              <ul class="ac-list" style="gap:8px">
+                <li>• Dados de contato e endereço (para agilizar o checkout)</li>
+                <li>• Histórico de pedidos feitos neste navegador</li>
+                <li>• Preferências de tema e modo de preço (varejo/atacado)</li>
+              </ul>
+              <p style="margin-top:14px;color:var(--ink-3);font-size:13px">Nenhum dado de cartão é armazenado — quando você paga com cartão, guardamos apenas bandeira e os 4 últimos dígitos, como em uma nota fiscal.</p>
+            </div>
+            <div class="ac-card">
+              <h3>Zona de risco</h3>
+              <p style="color:var(--ink-2);font-size:14px;margin-bottom:16px">Apagar os dados remove permanentemente pedidos, perfil e preferências deste navegador.</p>
+              <button class="btn btn-ghost" type="button" id="wipeBtn" style="border-color:var(--red);color:var(--red)">Apagar meus dados</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteDrawers"></div>
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span></span></div>
+
+  <script src="data.js"></script>
+  <script src="theme.js"></script>
+  <script src="pay-core.js"></script>
+  <script src="conta.js"></script>
+</body>
+</html>
